@@ -1,0 +1,65 @@
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| album              |
+| articale           |
+| article1           |
+| article2           |
+| compsoc            |
+| compsocproject     |
+| countdown          |
+| cspark             |
+| europebus          |
+| information_schema |
+| laravelproject     |
+| login              |
+| london             |
+| mydatabase         |
+| mydb1              |
+| mydepartment       |
+| myorder            |
+| mysql              |
+| netbeans           |
+| new                |
+| performance_schema |
+| phpmyadmin         |
+| pscompany          |
+| tables             |
+| test               |
+| testlaravel        |
+| university         |
+| wordpress_test     |
++--------------------+
+28 rows in set (0.007 sec)
+
+MariaDB [(none)]> create database db_cake;
+Query OK, 1 row affected (0.172 sec)
+
+MariaDB [(none)]> use db_cake;
+Database changed
+MariaDB [db_cake]> CREATE TABLE `tbl_registration` (  `user_id` int(11) NOT NULL,  `username` varchar(50) NOT NULL,  `password` varchar(40) NOT NULL,  `email` varchar(100) NOT NULL,  `first_name` varchar(50) NOT NULL,  `last_name` varchar(50) NOT NULL,  `register_date` date NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+Query OK, 0 rows affected (0.640 sec)
+
+MariaDB [db_cake]> ALTER TABLE `tbl_registration`  ADD PRIMARY KEY (`user_id`);
+Query OK, 0 rows affected (0.883 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+MariaDB [db_cake]> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [db_cake]> show tables;
++-------------------+
+| Tables_in_db_cake |
++-------------------+
+| tbl_registration  |
++-------------------+
+1 row in set (0.001 sec)
+
+MariaDB [db_cake]> ALTER TABLE `tbl_registration`  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
+Query OK, 0 rows affected (1.047 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.000 sec)
+
+MariaDB [db_cake]>
